@@ -1,10 +1,10 @@
-import { Router, Request, Response } from 'express';
+import { Router, Request, Response } from 'express'
 
-const router = Router();
+const router = Router()
 
-router.get('/', (req: Request, res: Response) => res.status(200).send({
+router.get('/', (req: Request, res: Response) => res.status(200).json({
   title: 'Express API',
-  version: '1.0',
-}));
+  version: '1.0'
+}))
 
-export default router;
+export default router
