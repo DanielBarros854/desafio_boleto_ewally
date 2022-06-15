@@ -1,14 +1,12 @@
 import 'dotenv/config'
 import express from 'express'
-import index from './routes/index'
-import boletoRoute from './routes/boletoRoute'
+import { port } from './config'
+import { boletoRouter, homeRouter } from './routes'
 
 const app = express()
 
-app.use('/', index)
-app.use('/boleto', boletoRoute)
-
-const port = process.env.PORT || '4000'
+app.use('/', homeRouter)
+app.use('/boleto', boletoRouter)
 
 app.listen(
   port,
