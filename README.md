@@ -1,4 +1,4 @@
-# Desafio Boleto Ewally com Express e JavaScript
+# Desafio Boleto Ewally com Express e Typescript
 
 ## Qual objetivo desse projeto?
 
