@@ -4,7 +4,11 @@ export const bankSlip = (barCode: string) => {
   if (!validatorDVToBankSlip(barCode)) {
     return {
       code: 400,
-      message: 'Erro, digito validador incorreto!'
+      data: {
+        error: {
+          message: 'Erro, digito validador incorreto!'
+        }
+      }
     };
   }
 

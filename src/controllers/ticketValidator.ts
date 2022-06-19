@@ -9,21 +9,21 @@ export const ticketValidator = (req: Request, res: Response) => {
   const initialValueDealershipTicket = '8';
 
   if (barCode.length === barCodeHasPosition.bank) {
-    const data = bankSlip(barCode);
-    return res.status(data.code).json(data.data);
+    const result = bankSlip(barCode);
+    return res.status(result.code).json(result.data);
   }
 
   if (
     barCode.length === barCodeHasPosition.dealership &&
     barCode[0] === initialValueDealershipTicket
   ) {
-    const data = dealershipTicket(barCode);
-    return res.status(data.code).json(data?.data);
+    const result = dealershipTicket(barCode);
+    return res.status(result.code).json(result.data);
   }
 
   return res.status(400).json({
     error: {
-      message: 'Erro, digito validador incorreto!'
+      message: 'Erro, Formato de codigo incorreto!'
     }
   });
 };
