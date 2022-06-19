@@ -9,7 +9,7 @@ export const ticketValidator = (req: Request, res: Response) => {
   if (!/^[0-9]{47}$/.test(barCode) && !/^[0-9]{44}$/.test(barCode)) {
     return res.status(400).json({
       error: {
-        message: 'Erro, o código deve conter apenas números!'
+        message: 'Erro, Formato de codigo incorreto!'
       }
     });
   }
@@ -30,10 +30,4 @@ export const ticketValidator = (req: Request, res: Response) => {
     const result = dealershipTicket(barCode);
     return res.status(result.code).json(result.data);
   }
-
-  return res.status(400).json({
-    error: {
-      message: 'Erro, Formato de codigo incorreto!'
-    }
-  });
 };
