@@ -5,6 +5,15 @@ import { dealershipTicket } from './dealershipTicket';
 
 export const ticketValidator = (req: Request, res: Response) => {
   const { barCode } = req.params;
+
+  if (!/^[0-9]{47}$/.test(barCode) && !/^[0-9]{44}$/.test(barCode)) {
+    return res.status(400).json({
+      error: {
+        message: 'Erro, o código deve conter apenas números!'
+      }
+    });
+  }
+
   const initialValueDealershipTicket = '8';
   const bankBarCodeHasPosition = 47;
   const dealershipBarCodeHasPosition = 44;
