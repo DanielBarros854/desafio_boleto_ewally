@@ -1,3 +1,3 @@
-export * from './port'
-export * from './barCodeHasPosition'
-export * from './fixedDataBase'
+export * from './port';
+export * from './barCodeHasPosition';
+export * from './fixedDataBase';

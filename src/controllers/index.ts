@@ -1,3 +1,3 @@
-export * from './bankSlip'
-export * from './dealershipTicket'
-export * from './ticketValidator'
+export * from './bankSlip';
+export * from './dealershipTicket';
+export * from './ticketValidator';

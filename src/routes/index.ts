@@ -1,2 +1,2 @@
-export * from './homeRoute'
-export * from './ticketRoute'
+export * from './homeRoute';
+export * from './ticketRoute';

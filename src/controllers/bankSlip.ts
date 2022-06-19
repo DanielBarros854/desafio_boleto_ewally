@@ -1,24 +1,22 @@
-import { getAmount, getExpirantionDate, validatorDV } from '../functions'
+import { getAmountToBankSlip, getExpirantionDateToBankSlip, validatorDVToBankSlip } from '../functions';
 
 export const bankSlip = (barCode: string) => {
-  if (!validatorDV(barCode)) {
+  if (!validatorDVToBankSlip(barCode)) {
     return {
       code: 400,
-      error: true,
       message: 'Erro, digito validador incorreto!'
-    }
+    };
   }
 
-  const expirantionDate = getExpirantionDate(barCode)
-  const amount = getAmount(barCode)
+  const expirantionDate = getExpirantionDateToBankSlip(barCode);
+  const amount = getAmountToBankSlip(barCode);
 
   return {
     code: 200,
-    error: false,
     data: {
       amount,
       expirantionDate,
       barCode
     }
-  }
-}
+  };
+};

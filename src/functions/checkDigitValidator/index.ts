@@ -1,2 +1,2 @@
-export * from './checkDigitValidatorModuleTen'
-export * from './checkDigitValidatorModuleEleven'
+export * from './checkDigitValidatorModuleTen';
+export * from './checkDigitValidatorModuleEleven';

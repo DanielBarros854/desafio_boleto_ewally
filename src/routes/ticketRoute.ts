@@ -1,6 +1,6 @@
-import { Router, Request, Response } from 'express'
-import { ticketValidator } from '../controllers'
+import { Router } from 'express';
+import { ticketValidator } from '../controllers';
 
-export const ticketRouter = Router()
+export const ticketRouter = Router();
 
-ticketRouter.get('/:barCode', (req: Request, res: Response) => res.json(ticketValidator(req)))
+ticketRouter.get('/:barCode', ticketValidator);
