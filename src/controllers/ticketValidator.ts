@@ -1,22 +1,29 @@
-import { Request } from 'express'
+import { Request, Response } from 'express';
 
-import { barCodeHasPosition } from '../config'
-import { bankSlip } from './bankSlip'
-import { dealershipTicket } from './dealershipTicket'
+import { barCodeHasPosition } from '../config';
+import { bankSlip } from './bankSlip';
+import { dealershipTicket } from './dealershipTicket';
 
-export const ticketValidator = (req: Request) => {
-  const { barCode } = req.params
+export const ticketValidator = (req: Request, res: Response) => {
+  const { barCode } = req.params;
+  const initialValueDealershipTicket = '8';
 
   if (barCode.length === barCodeHasPosition.bank) {
-    return bankSlip(barCode)
+    const data = bankSlip(barCode);
+    return res.status(data.code).json(data.data);
   }
 
-  if (barCode.length === barCodeHasPosition.dealership) {
-    return dealershipTicket(barCode)
+  if (
+    barCode.length === barCodeHasPosition.dealership &&
+    barCode[0] === initialValueDealershipTicket
+  ) {
+    const data = dealershipTicket(barCode);
+    return res.status(data.code).json(data?.data);
   }
 
-  return {
-    code: 400,
-    error: true
-  }
-}
+  return res.status(400).json({
+    error: {
+      message: 'Erro, digito validador incorreto!'
+    }
+  });
+};
