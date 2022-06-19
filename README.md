@@ -15,7 +15,7 @@ Deve seguir os seguintes passos:
 
 1. Clonar direto do GitHub para a sua máquina o repositório referente a projeto (desafio_boleto_ewally);
 2. Abrir o repositório em um editor de código de sua preferência;
-4. Criar um arquivo chamado ".**_env_**" e nele escrever as seguintes variáveis de ambiente e nessas variáveis colocar os valores necessários:
-   ![Captura de tela com exemplo de variáveis de ambiente](https://i.imgur.com/JEpyI42.jpeg)
+4. Criar um arquivo chamado ".**_env_**" e nele escrever as seguintes variáveis de ambiente:
+   ![Captura de tela com exemplo de variáveis de ambiente](https://i.imgur.com/3CXKagt.png)
 5. Execute no terminal do editor de código o comando "**yarn**" ou "**npm install**", esse comando irá instalar todas as depencias que o projeto utiliza para "rodar";
 7. Se nenhum erro for retornado em nenhum dos passos acima basta executar o comando "**yarn dev**" ou "**npm run dev**" para que a aplicação seja executada e para que assim seja possível fazer acesso às nossas APIs.

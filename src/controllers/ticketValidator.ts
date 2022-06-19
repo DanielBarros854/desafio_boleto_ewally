@@ -1,20 +1,21 @@
 import { Request, Response } from 'express';
 
-import { barCodeHasPosition } from '../config';
 import { bankSlip } from './bankSlip';
 import { dealershipTicket } from './dealershipTicket';
 
 export const ticketValidator = (req: Request, res: Response) => {
   const { barCode } = req.params;
   const initialValueDealershipTicket = '8';
+  const bankBarCodeHasPosition = 47;
+  const dealershipBarCodeHasPosition = 44;
 
-  if (barCode.length === barCodeHasPosition.bank) {
+  if (barCode.length === bankBarCodeHasPosition) {
     const result = bankSlip(barCode);
     return res.status(result.code).json(result.data);
   }
 
   if (
-    barCode.length === barCodeHasPosition.dealership &&
+    barCode.length === dealershipBarCodeHasPosition &&
     barCode[0] === initialValueDealershipTicket
   ) {
     const result = dealershipTicket(barCode);
