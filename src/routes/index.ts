@@ -1,2 +1,2 @@
 export * from './homeRoute'
-export * from './boletoRoute'
+export * from './ticketRoute'

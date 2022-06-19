@@ -1,10 +1,11 @@
-import { getAmount, getExpirantionDate, validatorDV } from '../utils'
+import { getAmount, getExpirantionDate, validatorDV } from '../functions'
 
-export const boletoBancario = (barCode: string) => {
+export const bankSlip = (barCode: string) => {
   if (!validatorDV(barCode)) {
     return {
       code: 400,
-      error: true
+      error: true,
+      message: 'Erro, digito validador incorreto!'
     }
   }
 

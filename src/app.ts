@@ -1,12 +1,12 @@
 import 'dotenv/config'
 import express from 'express'
 import { port } from './config'
-import { boletoRouter, homeRouter } from './routes'
+import { ticketRouter, homeRouter } from './routes'
 
 const app = express()
 
 app.use('/', homeRouter)
-app.use('/boleto', boletoRouter)
+app.use('/boleto', ticketRouter)
 
 app.listen(
   port,
